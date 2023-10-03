@@ -1,6 +1,6 @@
 namespace mpt_lab_3;
 
-public class Matrix
+public static class Matrix
 {
     /// <summary>
     /// Generates a random 2D matrix of integers.
@@ -11,13 +11,13 @@ public class Matrix
         Random random = new Random();
 
         int rows = random.Next(5, 10);
-        int cols = random.Next(5, 10);
+        int columns = random.Next(5, 10);
 
-        int[,] array = new int[rows, cols];
+        int[,] array = new int[rows, columns];
 
         for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < columns; j++)
             {
                 array[i, j] = random.Next(1, 101);
             }
@@ -26,6 +26,10 @@ public class Matrix
         return array;
     }
 
+    /// <summary>
+    /// This method prints the elements of a two-dimensional integer matrix in a tabular format.
+    /// </summary>
+    /// <param name="matrix">The input integer matrix to be printed.</param>
     public static void PrintMatrix(int[,] matrix)
     {
         int rows = matrix.GetLength(0);
